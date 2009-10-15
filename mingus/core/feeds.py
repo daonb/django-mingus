@@ -6,10 +6,11 @@ from django_proxy.models import Proxy
 
 class AllEntries(Feed):
     _settings = Settings.get_current()
-    title = '%s all entries feed' % _settings.site_name
-    description = 'All entries published and updated on %s' % _settings.site_name
-    author_name = _settings.author_name
-    copyright = _settings.copyright
+    if _settings:
+        title = '%s all entries feed' % _settings.site_name
+        description = 'All entries published and updated on %s' % _settings.site_name
+        author_name = _settings.author_name
+        copyright = _settings.copyright
 
     def link(self):
         return 'http://%s' % self._settings.site.domain
