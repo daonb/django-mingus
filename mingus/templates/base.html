@@ -81,11 +81,11 @@
       <h4>{% trans "About" %}</h4>
       <p>{{ BLOG_SETTINGS.about }}</p>
 
-      <h4>Subscribe</h4>
+      <h4>{% trans "Subscribe" %}</h4>
       <ul>
-        <li><a href="{{ BLOG_SETTINGS.twitter_url }}" title="Follow me on Twitter">Twitter</a></li>
-        <li><a href="{{ BLOG_SETTINGS.rss_url }}" title"Subscribe via RSS">RSS</a></li>
-        <li><a href="{{ BLOG_SETTINGS.email_subscribe_url }}" title="Subscribe via Email">Email</a></li>
+          <li><a href="{{ BLOG_SETTINGS.twitter_url }}" title="Follow me on Twitter">{% trans "Twitter" %}</a></li>
+          <li><a href="{{ BLOG_SETTINGS.rss_url }}" title"Subscribe via RSS">{% trans "RSS" %}</a></li>
+          <li><a href="{{ BLOG_SETTINGS.email_subscribe_url }}" title="Subscribe via Email">{% trans "Email" %}</a></li>
       </ul>
 
       <h4>{% trans "Elsewhere" %}</h4>
