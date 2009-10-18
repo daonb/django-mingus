@@ -43,6 +43,9 @@
     </script>
     <![endif]-->
 
+    <script>
+        var disqus_iframe_css ="{{ static_URL}}css/disqus.css";
+    </script>
     {% disqus_dev %}
     {% block extra_head %}{% endblock %}
   </head>
@@ -56,6 +59,7 @@
   <div id="header" class="clearfix">
     <div id="logo">
       <h1><a href="/" title="{{ BLOG_SETTINGS.site_name }}}">{{ BLOG_SETTINGS.site_name }}</a></h1>
+                   אז קראו את הסיפור החדש שלי ותגידו מה דעתכם.         
       <!-- a href="{{ SITE_URL }}" title="Monty Lounge Industries Blog"><img class="logo" src="{{ STATIC_URL }}imgs/logo-blog-color-trans2.png" alt="Monty Lounge Industries"></a -->
     </div>
     <!-- /logo -->
@@ -88,20 +92,24 @@
 
       <h4>{% trans "Subscribe" %}</h4>
       <ul>
-          <li><a href="{{ BLOG_SETTINGS.twitter_url }}" title="Follow me on Twitter">{% trans "Twitter" %}</a></li>
+          {% if BLOG_SETTINGS.twitter_url %}
+              <li><a href="{{ BLOG_SETTINGS.twitter_url }}" title="Follow me on Twitter">{% trans "Twitter" %}</a></li>
+          {% endif %}
           <li><a href="{{ BLOG_SETTINGS.rss_url }}" title"Subscribe via RSS">{% trans "RSS" %}</a></li>
           <li><a href="{{ BLOG_SETTINGS.email_subscribe_url }}" title="Subscribe via Email">{% trans "Email" %}</a></li>
       </ul>
 
+        {% get_elsewhere_profiles as profiles %}
+        {% if profiles %}
       <h4>{% trans "Elsewhere" %}</h4>
       <ul>
         {% cache 3600 "base.profiles" %}
-        {% get_elsewhere_profiles as profiles %}
         {% for item in profiles %}
         <li><a href="{{ item.url }}" title="{{ item.name }}">{{ item.name }}</a></li>
         {% endfor %}
       </ul>
       {% endcache %}
+      {% endif %}
 
       <h4>{% trans "Categories" %}</h4>
       <ul>
@@ -133,8 +141,9 @@
     </ul>
     {% endcache %}
 
-      {% cache 3600 "base.blogroll" %}
       {% get_blogroll 10 as blogroll %}
+    {% if blogroll %}
+      {% cache 3600 "base.blogroll" %}
       <h4>{% trans "BlogRoll" %}</h4>
       <ul class="recent-posts">
       {% for item in blogroll %}
@@ -142,7 +151,9 @@
       {% endfor %}
       </ul>
       {% endcache %}
+      {% endif %}
 
+      {% if MINE_POPULAR %}
       {% cache 3600 "bas.popular-posts" %}
       <h4>{% trans "Popular Posts" %}</h4>
       <ul class="recent-posts">
@@ -152,7 +163,9 @@
       {% endfor %}
       </ul>
       {% endcache %}
+      {% endif %}
 
+      {% if DJANGO_POPULAR %}
       {% cache 3600 "delicious.popular" %}
       {% parse_feed 'http://feeds.delicious.com/v2/rss/tag/django?count=15' as items %}
       <h4>{% trans "Django Popular" %}</h4>
@@ -162,6 +175,7 @@
       {% endfor %}
       </ul>
       {% endcache %}
+      {% endif %}
 
     </div>
     <!-- /grid_6 -->
