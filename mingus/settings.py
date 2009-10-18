@@ -84,6 +84,7 @@ INSTALLED_APPS = (
   'honeypot',
   'sugar',
   'quoteme',
+  'tinymce',
   'mingus',
 )
 

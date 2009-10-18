@@ -67,6 +67,7 @@ urlpatterns += patterns('',
     url(r'^tags/(?P<slug>[-\w]+)/$', 'mingus.core.views.tag_detail',
             name='blog_tag_detail'),
 
+    (r'^tinymce/', include('tinymce.urls')),
     (r'', include('basic.blog.urls')),
 )
 

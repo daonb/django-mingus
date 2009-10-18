@@ -1,7 +1,7 @@
 BeautifulSoup==3.1.0.1
 http://dist.repoze.org/PIL-1.1.6.tar.gz
 python-dateutil==1.4.1
-django==1.1
+django==1.1.1
 django-debug-toolbar==0.8
 django-tagging==0.3
 Pygments==1.0
@@ -12,7 +12,7 @@ http://www.aeracode.org/releases/south/south-0.6.1.tar.gz
 
 -e git+git://github.com/django-extensions/django-extensions.git#egg=django_extensions
 
--e git+git://github.com/montylounge/django-basic-apps.git#egg=basic
+-e git+git://github.com/skevy/django-basic-apps.git#egg=basic
 -e git+git://github.com/zerok/django-flatblocks.git#egg=flatblocks
 -e git+git://github.com/montylounge/django-disqus.git#egg=disqus
 -e svn+http://django-navbar.googlecode.com/svn/trunk#egg=navbar
@@ -31,3 +31,4 @@ http://www.aeracode.org/releases/south/south-0.6.1.tar.gz
 -e git+git://github.com/sunlightlabs/django-honeypot.git#egg=honeypot
 -e git+git://github.com/montylounge/django-sugar.git#egg=sugar
 -e git+git://github.com/montylounge/django-quoteme.git#egg=quoteme
+-e svn+http://django-tinymce.googlecode.com/svn/trunk/#egg=tinymce
