@@ -63,6 +63,7 @@
   {% endif %}
   {% endcache %}
 
+  {% if PROMTING %}
   <div class="subscribe clearfix">
     <ul>
       <li><a href="http://twitter.com/?status=reading: {{ object.title }} - {{ SITE_URL }}{{ object.get_absolute_url }}" target="_blank">{% trans "Twitter this" %}</a></li>
@@ -71,8 +72,10 @@
       <li><a href="{{ FEED_SUBSCRIBE_RSS }}">{% trans "Subscribe RSS" %}</a></li>
     </ul>
   </div>
+  {% endif %}
   <!-- post -->
 
+  <a name="comments"></a>
 {% include "blog/includes/comments.html" %}
 
 {% endblock %}
