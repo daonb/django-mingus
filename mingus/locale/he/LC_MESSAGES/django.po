@@ -1,0 +1,204 @@
+# Django mingus hebrew localization
+# Copyright (C) 2009
+# This file is distributed under the same license as the PACKAGE package.
+# Started by: Benny Daon
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-18 10:12-0400\n"
+"PO-Revision-Date: 2009-10-18 16:17+0200\n"
+"Last-Translator: daonb <bennydaon@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/base.html:89
+msgid "About"
+msgstr "אודות"
+
+#: templates/base.html:92
+msgid "Subscribe"
+msgstr "הרשמו"
+
+#: templates/base.html:95
+msgid "Twitter"
+msgstr "טויטר"
+
+#: templates/base.html:97
+msgid "RSS"
+msgstr "רסס"
+
+#: templates/base.html:98
+msgid "Email"
+msgstr "דואל"
+
+#: templates/base.html:103
+msgid "Elsewhere"
+msgstr "במקום אחר"
+
+#: templates/base.html:113
+msgid "Categories"
+msgstr "נושאים"
+
+#: templates/base.html:125
+#: templates/contact_form/contact_form_sent.html:11
+msgid "Recent Posts"
+msgstr "פוסטים אחרונים"
+
+#: templates/base.html:135
+msgid "Archive"
+msgstr "ארכיב"
+
+#: templates/base.html:146
+msgid "BlogRoll"
+msgstr "בלוגרול"
+
+#: templates/base.html:157
+msgid "Popular Posts"
+msgstr "הפופלארים"
+
+#: templates/base.html:170
+msgid "Django Popular"
+msgstr "פופולארי בדג'אנגו"
+
+#: templates/admin/base_site.html:4
+msgid "Mingus site admin"
+msgstr "ניהול אתר מינגוס"
+
+#: templates/admin/base_site.html:16
+msgid "Mingus Blog Engine"
+msgstr ""
+
+#: templates/admin/login.html:19
+msgid "Username:"
+msgstr ""
+
+#: templates/admin/login.html:22
+msgid "Password:"
+msgstr ""
+
+#: templates/admin/login.html:27
+msgid "Log in"
+msgstr ""
+
+#: templates/blog/category_detail.html:5
+#: templates/blog/category_detail.html:11
+#: templates/blog/post_archive_month.html:9
+#: templates/blog/tag_detail.html:4
+msgid "Posts for"
+msgstr "פוסטים בנושא:"
+
+#: templates/blog/post_detail.html:69
+msgid "Twitter this"
+msgstr ""
+
+#: templates/blog/post_detail.html:70
+msgid "Reddit this"
+msgstr ""
+
+#: templates/blog/post_detail.html:71
+msgid "Add to Delicious"
+msgstr ""
+
+#: templates/blog/post_detail.html:72
+msgid "Subscribe RSS"
+msgstr "הרשמו לרסס"
+
+#: templates/blog/post_search.html:5
+#: templates/blog/post_search.html.py:10
+msgid "Search results for:"
+msgstr "תוצאות חיפוש עבור:"
+
+#: templates/blog/tag_detail.html:10
+msgid "Posts tagged:"
+msgstr "פוסטים שמתויגים כ:"
+
+#: templates/contact_form/contact_form.html:4
+msgid "Contact"
+msgstr "צור קשר"
+
+#: templates/contact_form/contact_form.html:8
+#: templates/contact_form/contact_form_sent.html:6
+msgid "Contact me"
+msgstr ""
+
+#: templates/contact_form/contact_form.html:10
+msgid "Get in touch."
+msgstr ""
+
+#: templates/contact_form/contact_form.html:16
+msgid "Woops, looks like you forgot some information."
+msgstr ""
+
+#: templates/contact_form/contact_form_sent.html:8
+msgid "Thanks! I'll make sure to responsd shortly. In the meantime, check out some of my latest and greatest posts."
+msgstr ""
+
+#: templates/proxy/tag_detail.html:4
+msgid "Entries for"
+msgstr "פוסטים עבור"
+
+#: templates/proxy/tag_detail.html:10
+msgid "Entries tagged:"
+msgstr "פוסטים בנושא/ים:"
+
+#: templates/proxy/includes/post_item.html:12
+msgid "Comments"
+msgstr "תגובות"
+
+#: templates/quotes/quote_detail.html:8
+msgid "Quick fact, my favorite food is"
+msgstr ""
+
+#: templates/quotes/quote_list.html:4
+#: templates/quotes/quote_list.html.py:8
+msgid "Quotes"
+msgstr "ציטוטים"
+
+#: templates/quotes/quote_list.html:10
+msgid "A little side note, my favorite jazz album is"
+msgstr ""
+
+#: templatetags/tagging_related.py:21
+#, python-format
+msgid "tagged_get_related tag was given an invalid input: %s"
+msgstr ""
+
+#: templatetags/tagging_related.py:35
+#, python-format
+msgid "%s tag requires either five or seven arguments"
+msgstr ""
+
+#: templatetags/tagging_related.py:37
+#, python-format
+msgid "second argument to %s tag must be 'in'"
+msgstr ""
+
+#: templatetags/tagging_related.py:39
+#, python-format
+msgid "fourth argument to %s tag must be 'as'"
+msgstr ""
+
+#: templatetags/tagging_related.py:42
+#, python-format
+msgid "if given, fourth argument to %s tag must be 'with'"
+msgstr ""
+
+#: templatetags/tagging_related.py:49
+#, python-format
+msgid "%(tag)s tag's '%(option)s' option was not a valid integer: '%(value)s'"
+msgstr ""
+
+#: templatetags/tagging_related.py:55
+#, python-format
+msgid "%(tag)s tag was given an invalid option: '%(option)s'"
+msgstr ""
+
+#: templatetags/tagging_related.py:60
+#, python-format
+msgid "%(tag)s tag was given a badly formatted option: '%(option)s'"
+msgstr ""
+
