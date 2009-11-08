@@ -1,4 +1,4 @@
-{% load disqus_tags flatblock_tags cache navbar generic_content blog compress analytics elsewhere feeds i18n archive %}
+{% load flatblock_tags cache navbar generic_content blog compress analytics elsewhere feeds i18n archive %}
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
@@ -43,10 +43,6 @@
     </script>
     <![endif]-->
 
-    <script>
-        var disqus_iframe_css ="{{ static_URL}}css/disqus.css";
-    </script>
-    {% disqus_dev %}
     {% block extra_head %}{% endblock %}
   </head>
 
