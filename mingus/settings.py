@@ -86,7 +86,9 @@ INSTALLED_APPS = (
   'quoteme',
   'tinymce',
   'mingus',
+  'ishuman',
 )
+COMMENTS_APP = 'ishuman'
 
 try:
    from local_settings import *

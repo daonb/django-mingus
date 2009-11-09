@@ -7,60 +7,71 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-18 10:12-0400\n"
-"PO-Revision-Date: 2009-10-18 16:17+0200\n"
+"POT-Creation-Date: 2009-11-09 11:34+0200\n"
+"PO-Revision-Date: 2009-11-09 11:18+0200\n"
 "Last-Translator: daonb <bennydaon@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/base.html:89
+#: ishuman/forms.py:6
+msgid "Site"
+msgstr "אתר"
+
+#: ishuman/forms.py:7
+msgid "Email address"
+msgstr "כתובת דואל"
+
+#: ishuman/forms.py:8
+msgid "will not be displayed"
+msgstr "לא תוצג"
+
+#: templates/base.html:86
 msgid "About"
 msgstr "אודות"
 
-#: templates/base.html:92
+#: templates/base.html:89
 msgid "Subscribe"
 msgstr "הרשמו"
 
-#: templates/base.html:95
+#: templates/base.html:92
 msgid "Twitter"
 msgstr "טויטר"
 
-#: templates/base.html:97
+#: templates/base.html:94
 msgid "RSS"
 msgstr "רסס"
 
-#: templates/base.html:98
+#: templates/base.html:95
 msgid "Email"
 msgstr "דואל"
 
-#: templates/base.html:103
+#: templates/base.html:100
 msgid "Elsewhere"
 msgstr "במקום אחר"
 
-#: templates/base.html:113
+#: templates/base.html:110
 msgid "Categories"
 msgstr "נושאים"
 
-#: templates/base.html:125
-#: templates/contact_form/contact_form_sent.html:11
+#: templates/base.html:122 templates/contact_form/contact_form_sent.html:11
 msgid "Recent Posts"
 msgstr "פוסטים אחרונים"
 
-#: templates/base.html:135
+#: templates/base.html:132
 msgid "Archive"
 msgstr "ארכיב"
 
-#: templates/base.html:146
+#: templates/base.html:143
 msgid "BlogRoll"
 msgstr "בלוגרול"
 
-#: templates/base.html:157
+#: templates/base.html:154
 msgid "Popular Posts"
 msgstr "הפופלארים"
 
-#: templates/base.html:170
+#: templates/base.html:167
 msgid "Django Popular"
 msgstr "פופולארי בדג'אנגו"
 
@@ -86,8 +97,7 @@ msgstr ""
 
 #: templates/blog/category_detail.html:5
 #: templates/blog/category_detail.html:11
-#: templates/blog/post_archive_month.html:9
-#: templates/blog/tag_detail.html:4
+#: templates/blog/post_archive_month.html:9 templates/blog/tag_detail.html:4
 msgid "Posts for"
 msgstr "פוסטים בנושא:"
 
@@ -107,14 +117,58 @@ msgstr ""
 msgid "Subscribe RSS"
 msgstr "הרשמו לרסס"
 
-#: templates/blog/post_search.html:5
-#: templates/blog/post_search.html.py:10
+#: templates/blog/post_search.html:5 templates/blog/post_search.html.py:10
 msgid "Search results for:"
 msgstr "תוצאות חיפוש עבור:"
 
 #: templates/blog/tag_detail.html:10
 msgid "Posts tagged:"
 msgstr "פוסטים שמתויגים כ:"
+
+#: templates/blog/includes/comments.html:3
+#: templates/blog/includes/post_detail.html:12
+#: templates/proxy/includes/post_item.html:12
+msgid "Comments"
+msgstr "תגובות"
+
+#: templates/blog/includes/comments.html:11
+#, python-format
+msgid ""
+"\n"
+"                        %(since_submit)s ago"
+msgstr ""
+"\n"
+"לפני %(since_submit)s"
+
+#: templates/blog/includes/comments.html:38 templates/comments/preview.html:35
+msgid "Preview"
+msgstr ""
+
+#: templates/comments/preview.html:4 templates/comments/preview.html.py:13
+msgid "Preview your comment"
+msgstr ""
+
+#: templates/comments/preview.html:11
+msgid "Please correct the error below"
+msgid_plural "Please correct the errors below"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/comments/preview.html:16
+msgid "and"
+msgstr ""
+
+#: templates/comments/preview.html:16
+msgid "Post your comment"
+msgstr ""
+
+#: templates/comments/preview.html:16
+msgid "or make changes"
+msgstr ""
+
+#: templates/comments/preview.html:34
+msgid "Post"
+msgstr "שלח"
 
 #: templates/contact_form/contact_form.html:4
 msgid "Contact"
@@ -134,7 +188,9 @@ msgid "Woops, looks like you forgot some information."
 msgstr ""
 
 #: templates/contact_form/contact_form_sent.html:8
-msgid "Thanks! I'll make sure to responsd shortly. In the meantime, check out some of my latest and greatest posts."
+msgid ""
+"Thanks! I'll make sure to responsd shortly. In the meantime, check out some "
+"of my latest and greatest posts."
 msgstr ""
 
 #: templates/proxy/tag_detail.html:4
@@ -145,16 +201,11 @@ msgstr "פוסטים עבור"
 msgid "Entries tagged:"
 msgstr "פוסטים בנושא/ים:"
 
-#: templates/proxy/includes/post_item.html:12
-msgid "Comments"
-msgstr "תגובות"
-
 #: templates/quotes/quote_detail.html:8
 msgid "Quick fact, my favorite food is"
 msgstr ""
 
-#: templates/quotes/quote_list.html:4
-#: templates/quotes/quote_list.html.py:8
+#: templates/quotes/quote_list.html:4 templates/quotes/quote_list.html.py:8
 msgid "Quotes"
 msgstr "ציטוטים"
 
@@ -201,4 +252,3 @@ msgstr ""
 #, python-format
 msgid "%(tag)s tag was given a badly formatted option: '%(option)s'"
 msgstr ""
-

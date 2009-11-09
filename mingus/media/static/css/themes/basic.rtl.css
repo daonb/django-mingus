@@ -43,3 +43,11 @@ h2 a:hover { color: #333;}
 pre{ color: #333940; background-color: #ccc;}
 
 #footer {direction: ltr; text-align:center;}
+/* COMMENTS */
+ul.comments {border-bottom: thin solid; padding:0.5em;}
+.comments li {border-top: thin dashed; padding:0.5em;}
+.comments a {padding-left:2em; font-weight:bold;}
+li.comments p {padding-top:0.5em; padding-bottom:0.5em;}
+
+form.comment th {text-align:right; vertical-align:top; padding-left:3em;}
+form.comment td {vertical-align:bottom; padding-bottom:0.5em;}
