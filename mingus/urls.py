@@ -1,14 +1,16 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic.simple import direct_to_template
 from django.conf import settings
 from basic.blog import views as blog_views
 from basic.blog.feeds import BlogPostsFeed, BlogPostsByCategory
 from basic.blog.sitemap import BlogSitemap
 from mingus.core.views import springsteen_results, springsteen_firehose, \
-                            home_list, springsteen_category, contact_form
+                            home_list, springsteen_category, contact_form, \
+                            proxy_search
 from robots.views import rules_list
-from mingus.core.feeds import AllEntries
+from mingus.core.feeds import AllEntries, ByTag
 
 admin.autodiscover()
 
@@ -16,6 +18,7 @@ feeds = {
     'latest': BlogPostsFeed,
     'all': AllEntries,
     'categories': BlogPostsByCategory,
+    'tags': ByTag,
 }
 #ex: /feeds/latest/
 #ex: /feeds/all/
@@ -34,10 +37,12 @@ urlpatterns = patterns('',
     (r'^password_reset/done/$', 'django.contrib.auth.views.password_reset_done'),
     (r'^reset/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$', 'django.contrib.auth.views.password_reset_confirm'),
     (r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete'),
-    (r'^admin/(.*)', admin.site.root),
+    (r'^admin/', include(admin.site.urls)),
 )
 
 urlpatterns += patterns('',
+    (r'^tinymce/', include('tinymce.urls')),
+    (r'^portfolio/', include('portfolio.urls')),
     url(r'^oops/$', 'mingus.core.views.oops', name='raise_exception'),
     url(r'^quotes/$', 'mingus.core.views.quote_list', name='quote_list'),
     url(r'^quotes/(?P<slug>[-\w]+)/$', 'mingus.core.views.quote_detail', name='quote_detail'),
@@ -47,7 +52,7 @@ urlpatterns += patterns('',
     (r'^api/springsteen/posts/$', springsteen_results),
     (r'^api/springsteen/firehose/$', springsteen_firehose),
     (r'^api/springsteen/category/(?P<slug>[-\w]+)/$', springsteen_category),
-
+    
     url(r'^contact/$',
         contact_form,
         name='contact_form'),
@@ -69,15 +74,16 @@ urlpatterns += patterns('',
             name='blog_tag_detail'),
 
     (r'^tinymce/', include('tinymce.urls')),
+    url (r'^search/$',
+        view=proxy_search,
+        name='proxy_search'),
+
     (r'', include('basic.blog.urls')),
 )
 
-
-if settings.LOCAL_DEV:
+from django.conf import settings
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns()
     urlpatterns += patterns('django.views.static',
-        (r'^%s(?P<path>.*)' % settings.STATIC_URL[1:], 'serve',
-         {'document_root': settings.STATIC_ROOT}),
-        (r'^%s(?P<path>.*)' % settings.MEDIA_URL[1:], 'serve',
-         {'document_root': settings.MEDIA_ROOT}),
+        (r'^media/(?P<path>.*)$', 'serve', {'document_root': settings.MEDIA_ROOT}),
     )
-

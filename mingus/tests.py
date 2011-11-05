@@ -1,8 +1,9 @@
 from django.test.client import Client
-import unittest
+from django.test import TestCase
 
-
-class MingusClientTests(unittest.TestCase):
+class MingusClientTests(TestCase):
+    
+    fixtures = ['test_data.json', ]
 
     def setUp(self):
         pass
@@ -44,7 +45,7 @@ class MingusClientTests(unittest.TestCase):
         self.failUnlessEqual(response.status_code, 200)
 
         #test result as expected
-        self.assertEquals(response.context['object_list'][0].title, 'User Based Debug your Django App')
+        self.assertEquals(response.context['object_list'][0].title, 'Django Community')
 
     def test_About(self):
         'Test if the about page renders.'
