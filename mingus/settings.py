@@ -68,6 +68,7 @@ INSTALLED_APPS = (
   'django_extensions',
   'tagging',
   'djangodblog',
+  'disqus',
   'basic.inlines',
   'basic.blog',
   'basic.bookmarks',
@@ -90,6 +91,7 @@ INSTALLED_APPS = (
   'sugar',
   'quoteme',
   'mingus.core',
+  'mingus.ishuman',
   'debug_toolbar',
   
   'tinymce',
