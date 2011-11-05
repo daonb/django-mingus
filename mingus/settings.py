@@ -8,10 +8,8 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 #staticfiles app values
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static', 'betweenconcepts'),
-    os.path.join(PROJECT_ROOT, 'static', 'mingus'),
-)
+
+THEME = 'betweenconcepts'
 
 # Login paths
 LOGIN_REDIRECT_URL = '/admin/'
@@ -143,3 +141,9 @@ try:
    from local_settings import *
 except ImportError:
    pass
+
+# keep the next lines AFTER local_settings import
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static', THEME),
+    os.path.join(PROJECT_ROOT, 'static', 'mingus'),
+)
